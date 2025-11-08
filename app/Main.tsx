@@ -4,7 +4,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
 
-const MAX_DISPLAY = 9
+const MAX_DISPLAY = 8
 
 export default function Home({ posts }) {
   return (
@@ -18,7 +18,7 @@ export default function Home({ posts }) {
             {siteMetadata.description}
           </p>
         </div>
-        <ul className="grid grid-cols-1 border-t border-l border-black md:grid-cols-2 lg:grid-cols-3 dark:border-gray-700">
+        <ul className="grid grid-cols-1 border-t border-l border-black md:grid-cols-2 dark:border-gray-700">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((post) => {
             const { slug, date, title, summary, tags } = post
@@ -35,7 +35,7 @@ export default function Home({ posts }) {
                         <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
                       </dd>
                     </dl>
-                    <div className="space-y-5 xl:col-span-3">
+                    <div className="space-y-5">
                       <div className="space-y-6">
                         <div>
                           <h2 className="text-2xl leading-8 font-bold tracking-tight">
@@ -56,10 +56,10 @@ export default function Home({ posts }) {
                           {summary}
                         </div>
                       </div>
-                      <div className="text-base leading-6 font-medium transition-transform duration-300 ease-in-out hover:-translate-x-4">
+                      <div className="flex justify-end text-xs leading-6 font-bold transition-transform duration-300 ease-in-out group-hover:-translate-x-4">
                         <Link
                           href={`/blog/${slug}`}
-                          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 group-hover:text-white"
+                          className="text-primary-500 dark:hover:text-primary-400 uppercase group-hover:text-white"
                           aria-label={`Read more: "${title}"`}
                         >
                           Read more &rarr;
@@ -113,10 +113,10 @@ export default function Home({ posts }) {
         </ul>
       </div>
       {posts.length > MAX_DISPLAY && (
-        <div className="flex justify-end pt-12 text-base leading-6 font-medium">
+        <div className="flex justify-center p-12 text-base leading-6 font-extrabold">
           <Link
             href="/blog"
-            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-transform duration-300 ease-in-out hover:-translate-x-4"
+            className="dark:hover:text-primary-400 text-4xl uppercase transition-transform duration-300 ease-in-out hover:-translate-x-4"
             aria-label="All posts"
           >
             All Posts &rarr;
