@@ -1,7 +1,9 @@
 ---
-layout: post
-title: Reconciliation
-desc: React의 Reconciliation과정에 대해 알아봅니다.
+title: React Reconciliation
+date: '2022-11-27'
+tags: ['tech']
+draft: false
+summary: React의 Reconciliation 과정에 대해 알아봅니다.
 ---
 
 해당 포스트는 [React.js Deep Dive 시리즈 중의 1편인 How Does React Actually Work?의 Rconciliation 섹션](https://www.youtube.com/watch?t=334&v=7YhdqIR2Yzo&feature=youtu.be)을 기반으로 작성하였습니다.
@@ -129,7 +131,7 @@ mapping된 item목록이 있고 고유한 키를 제공해야 한다고 가정�
 
 리액트는 심플하게 이 attribute를 업데이트하기만 하면 된다. 이 경우에는 인스턴스들은 동일하게 유지되고 state도 유지된다. children을 바꾸는 것으로 넘어가보자.
 
-이름들의 목록을 상상해보자. 목록 끝에 이름을 추가하면 어떨까? React는 먼저 첫번째 item을 비교하고 두 item이 동일하다는 것을 인식한다. 그런 다음, 세번째 item이 새 item을 알아차리고 just 삽입한다. <심플-!>
+이름들의 목록을 상상해보자. 목록 끝에 이름을 추가하면 어떨까? React는 먼저 첫번째 item을 비교하고 두 item이 동일하다는 것을 인식한다. 그런 다음, 세번째 item이 새 item을 알아차리고 just 삽입한다. **_심플-!_**
 
 ```jsx
 <ul>

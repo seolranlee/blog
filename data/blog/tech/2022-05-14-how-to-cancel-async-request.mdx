@@ -1,7 +1,9 @@
 ---
-layout: post
 title: 비동기 요청 취소하기
-desc: 숨고 서비스에서 사용중인 카카오 픽셀의 장애 현상을 회고하고, 비동기 요청 취소에 대해 알아봅니다.
+date: '2022-05-14'
+tags: ['tech']
+draft: false
+summary: 숨고 서비스에서 사용중인 카카오 픽셀의 장애 현상을 회고하고, 비동기 요청 취소에 대해 알아봅니다.
 ---
 
 ## 필요하게 된 이유
@@ -78,7 +80,10 @@ export default App
 해당 코드는 https://jsonplaceholder.typicode.com/todos/1 api를 호출하여 todo 하나를 가져오는 정말로 아주아주 간단한 코드이다. 여기에 임의로 https://jsonplaceholder.typicode.com/* 에 대응되는 모든 api를 Throttler 걸어준다. (네트워크 요청을 설정해준 시간동안 모두 pending상태로 해준다.)
 
 <p align="center">
-  <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FwOhBj%2FbtrB8P1FVCZ%2FWQhnUCRz5oNuFRH4zQS6K1%2Fimg.png" alt="URL Throttler">
+  <img
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FwOhBj%2FbtrB8P1FVCZ%2FWQhnUCRz5oNuFRH4zQS6K1%2Fimg.png"
+    alt="URL Throttler"
+  />
 </p>
 
 pending 되는 시간은 2초정도로 설정해두었다.
